@@ -1,23 +1,59 @@
-#Building LLMs from Scratch
 
-## Google Colab for those who don't have a GPU: https://colab.research.google.com/drive/1_7TNpEEl8xjHlr9JzKbK5AuDKXwAkHqj?usp=sharing
+# Custom GPT Model
 
-Dependencies (assuming windows): `pip install pylzma numpy ipykernel jupyter torch --index-url https://download.pytorch.org/whl/cu118`
+Welcome to the Custom GPT Model repository! This project focuses on building a GPT (Generative Pre-trained Transformer) model from the ground up using PyTorch. The journey covers everything from installing the necessary tools and libraries to implementing and training a GPT model on a substantial text corpus.
 
-If you don't have an NVIDIA GPU, then the `device` parameter will default to `'cpu'` since `device = 'cuda' if torch.cuda.is_available() else 'cpu'`. If device is defaulting to `'cpu'` that is fine, you will just experience slower runtimes.
+## Introduction
 
-## All the links you should need are in this repo. I will add detailed explanations as questions and issues are posted.
+This repository showcases the development of a custom GPT model, guiding you through each critical step. Whether you're experimenting with text tokenization, working with tensors, or diving deep into transformer architectures, this project is designed to enhance your understanding of language models and deep learning techniques.
 
-## Visual Studio 2022 (for lzma compression algo) - https://visualstudio.microsoft.com/downloads/
+## Installation
 
-## OpenWebText Download
-- https://skylion007.github.io/OpenWebTextCorpus/
-- if this doesn't work, default to the wizard of oz mini dataset for training / validation
+To get started, you’ll need to install various libraries and tools. The project requires standard Python libraries along with specialized packages for building and running the model. Instructions for setting up your environment and installing dependencies are provided in the installation guide.
 
+## Project Overview
 
-## Research Papers:
-Attention is All You Need - https://arxiv.org/pdf/1706.03762.pdf
+### Pylzma Build Tools
+Learn how to build and configure the Pylzma tools, which are essential for data compression and decompression within this project.
 
-A Survey of LLMs - https://arxiv.org/pdf/2303.18223.pdf
+### Jupyter Notebook
+Explore the implementation and experimentation with Jupyter Notebook, an essential tool for running and testing code interactively.
 
-QLoRA: Efficient Finetuning of Quantized LLMs - https://arxiv.org/pdf/2305.14314.pdf
+### Download and Experiment with Text Files
+We start by downloading classic text data, such as "The Wizard of Oz," and experimenting with text processing techniques. This includes preparing the text data for tokenization and model training.
+
+### Tokenization Techniques
+The project introduces various tokenization methods, with a focus on character-level tokenization. You'll also explore different types of tokenizers and their applications in NLP.
+
+### Tensor Operations and Linear Algebra
+Understand the basics of working with tensors instead of arrays, followed by a heads-up on linear algebra concepts that are crucial for deep learning.
+
+### Model Training
+We dive into the training process, starting with the creation of train and validation splits, followed by the introduction of the Bigram Model. This includes an in-depth discussion on inputs and targets, batch size hyperparameters, and switching from CPU to CUDA for faster computation.
+
+### PyTorch Overview and Performance
+A comprehensive overview of PyTorch is provided, including a comparison of CPU and GPU performance, essential PyTorch functions, and their applications in building the model.
+
+### Embeddings and Matrix Operations
+Learn about embedding vectors, their implementation, and matrix operations like the dot product and matrix multiplication, which are critical for model performance.
+
+### Model Architecture and Implementation
+This section focuses on building the GPT architecture, starting with the initialization and forward pass of the GPTLanguageModel. You'll also explore the use of transformers, self-attention mechanisms, and positional encoding in the model.
+
+### Training the Model
+The training process covers normalization techniques, activation functions like ReLU, Sigmoid, and Tanh, and the construction of transformer blocks. The section also includes multi-head attention, dot product attention, and an explanation of scaling by 1/sqrt(dk).
+
+### Hyperparameters and Error Fixing
+Learn about the key hyperparameters involved in training, how to fix errors, and refine the model during development. 
+
+### Data Preparation and Training on OpenWebText
+Instructions on downloading the OpenWebText dataset, extracting the corpus, and adjusting the data loader for efficient training and validation splits. You'll also see how to train the model on OpenWebText and manage model loading/saving using pickling.
+
+### Advanced Topics
+Explore command line argument parsing, porting code to a script, and implementing a prompt-completion feature. The project also discusses the nuances between pretraining and fine-tuning, and provides pointers for further research and development.
+
+## Conclusion
+
+The project concludes with a summary of the key takeaways and further directions for enhancing the GPT model. This includes considerations for scaling the model, optimizing training performance, and potential applications.
+
+---
